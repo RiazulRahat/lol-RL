@@ -4,7 +4,7 @@ from pathlib import Path
 from riotwatcher import RiotWatcher, LolWatcher, ApiError
 from config import RIOT_API_KEY, LOL_PLATFORM_REGION, LOL_ROUTING_REGION
 
-GET_MATCHES_COUNT = 20  # Number of matches to fetch per request
+GET_MATCHES_COUNT = 40  # Number of matches to fetch per request
 
 # Directories and file paths
 PUUID_FILE = Path("puuid.txt")
