@@ -3,25 +3,15 @@ from pathlib import Path
 
 from riotwatcher import RiotWatcher, LolWatcher, ApiError
 from config import RIOT_API_KEY, LOL_PLATFORM_REGION, LOL_ROUTING_REGION
+from utilities import load_puuid, dir_exists
 
-GET_MATCHES_COUNT = 40  # Number of matches to fetch per request
+GET_MATCHES_COUNT = 100  # Number of matches to fetch per request
 
 # Directories and file paths
 PUUID_FILE = Path("puuid.txt")
 DATA_DIR = Path("data")
 MATCHES_DIR = DATA_DIR / "matches"
 TIMELINES_DIR = DATA_DIR / "timelines"
-
-def load_puuid():
-    """Load the player's PUUID from puuid.txt."""
-    if not PUUID_FILE.exists():
-        raise RuntimeError(f"{PUUID_FILE} not found. Run get_puuid.py first to generate it.")
-    
-    return PUUID_FILE.read_text(encoding="utf-8").strip()
-
-def dir_exists():
-    MATCHES_DIR.mkdir(parents=True, exist_ok=True)
-    TIMELINES_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def main():

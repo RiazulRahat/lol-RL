@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from download_matches import load_puuid, dir_exists
+from utilities import load_puuid, dir_exists
 
 PUUID_FILE = Path("puuid.txt")
 DATA_DIR = Path("data")
@@ -129,8 +129,8 @@ def build_clean_data():
             print("Could not find player data for match", m_id, "Skipping...")
             continue
 
-        if not is_jungle(me):
-            print(f"Player did not play jungle in match, (teamPosition={me.get('teamPosition')})", m_id, "Skipping...")
+        if not is_top(me):
+            print(f"Player did not play top in match, (teamPosition={me.get('teamPosition')})", m_id, "Skipping...")
             continue
 
 
@@ -159,10 +159,10 @@ def build_clean_data():
         data.append(entry)
 
     # Save clean data to file
-    clean_path = CLEAN_DIR / "jungle_matches_index.json"
+    clean_path = CLEAN_DIR / "top_matches_index.json"
     with clean_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"Saved {len(data)} clean jungle match entries to {clean_path}")
+    print(f"Saved {len(data)} clean top match entries to {clean_path}")
 
 
 def main():

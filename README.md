@@ -13,4 +13,7 @@ makes post-game recommendations.
 - Riot API integration:
   - Get PUUID from Riot ID
   - Download recent matches and timelines
+  - Separate played lane info into separate json files
+  - Create a CSV file with training dataset using snapshots from all available data
+
 - Data stored locally in `data/` (ignored by git)
