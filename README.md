@@ -1,4 +1,4 @@
-Working with Riot Games API and Game Data using RiotWatcher API
+Working with Riot Games API and Game Data using RiotWatcher wrapper
 
 # LoL
 
