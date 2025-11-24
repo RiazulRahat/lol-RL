@@ -11,7 +11,10 @@ __pycache__/
 .env
 
 # Local data (match + timeline JSONs)
-data/
+data/*
+!data/datasets
+data/datasets/*
+!data/datasets/top_matches_summary_v1.csv
 
 # macOS junk
 .DS_Store
