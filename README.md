@@ -1,8 +1,12 @@
-# LoL RL Coach
+Working with Riot Games API and Game Data using RiotWatcher API
 
-Offline reinforcement-learning / neural network project that analyzes my
+# LoL
+
+Vision: Offline reinforcement-learning / neural network project that analyzes my
 League of Legends games from replays (match + timeline data) and
 makes post-game recommendations.
+
+
 
 ## Current status
 
