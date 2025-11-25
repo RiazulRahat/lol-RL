@@ -3,8 +3,8 @@ from pathlib import Path
 
 from utilities import load_puuid, dir_exists
 
-PUUID_FILE = Path("puuid.txt")
-DATA_DIR = Path("data")
+PUUID_FILE = DATA_DIR = Path(__file__).parent.parent / "puuid.txt"
+DATA_DIR = DATA_DIR = Path(__file__).parent.parent / "data"
 MATCHES_DIR = DATA_DIR / "matches"
 TIMELINES_DIR = DATA_DIR / "timelines"
 CLEAN_DIR = DATA_DIR / "clean_matches"

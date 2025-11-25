@@ -5,11 +5,11 @@ import csv
 from pathlib import Path
 
 from dotenv import load_dotenv
-from utilities import load_puuid, dir_exists, load_json
+from utilities import load_puuid, load_json
 
 load_dotenv()
 
-DATA_DIR = Path("data")
+DATA_DIR = Path(__file__).parent.parent / "data"
 MATCHES_DIR = DATA_DIR / "matches"
 TIMELINES_DIR = DATA_DIR / "timelines"
 CLEAN_DIR = DATA_DIR / "clean_matches"
@@ -19,7 +19,6 @@ OUTPUT_CSV = DATA_DIR / "datasets" /"top_matches_summary.csv"
 my_puuid = load_puuid()
 
 LANE_PHASE_MAX_TIME = 20 * 60  # 20 mins
-
 
 
 def get_top_laners(match, my_puuid):
@@ -170,7 +169,7 @@ def process_match(match_id):
         position_enemy = pf_enemy.get("position")
         if not position_self or not position_enemy:
             continue
-
+        
         cs_self = pf_self["minionsKilled"] + pf_self["jungleMinionsKilled"]
         cs_enemy = pf_enemy["minionsKilled"] + pf_enemy["jungleMinionsKilled"]
         

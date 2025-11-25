@@ -5,11 +5,11 @@ from riotwatcher import RiotWatcher, LolWatcher, ApiError
 from config import RIOT_API_KEY, LOL_PLATFORM_REGION, LOL_ROUTING_REGION
 from utilities import load_puuid, dir_exists
 
-GET_MATCHES_COUNT = 100  # Number of matches to fetch per request
+GET_MATCHES_COUNT = 30  # Number of matches to fetch per request
 
 # Directories and file paths
-PUUID_FILE = Path("puuid.txt")
-DATA_DIR = Path("data")
+PUUID_FILE = Path(__file__).parent.parent / "puuid.txt"
+DATA_DIR = Path(__file__).parent.parent / "data"
 MATCHES_DIR = DATA_DIR / "matches"
 TIMELINES_DIR = DATA_DIR / "timelines"
 
@@ -30,7 +30,8 @@ def main():
 
     # Fetch match IDs
     try:
-        match_ids = lol.match.matchlist_by_puuid(LOL_PLATFORM_REGION, start=0, puuid=puuid, count=GET_MATCHES_COUNT)
+        start_index = 0
+        match_ids = lol.match.matchlist_by_puuid(LOL_PLATFORM_REGION, start=start_index, puuid=puuid, count=GET_MATCHES_COUNT)
         
     except ApiError as error:
         print("ApiError while fetching match IDs:")

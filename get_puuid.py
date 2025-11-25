@@ -1,5 +1,5 @@
 from riotwatcher import RiotWatcher, ApiError
-from config import RIOT_API_KEY, RIOT_IGN, RIOT_TAG, LOL_PLATFORM_REGION, LOL_ROUTING_REGION
+from code.config import RIOT_API_KEY, RIOT_IGN, RIOT_TAG, LOL_PLATFORM_REGION, LOL_ROUTING_REGION
 
 def main():
 

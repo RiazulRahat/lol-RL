@@ -2,8 +2,8 @@ from pathlib import Path
 import json
 
 # Directories and file paths
-PUUID_FILE = Path("puuid.txt")
-DATA_DIR = Path("data")
+PUUID_FILE = Path(__file__).parent.parent / "puuid.txt"
+DATA_DIR = Path(__file__).parent.parent / "data"
 MATCHES_DIR = DATA_DIR / "matches"
 TIMELINES_DIR = DATA_DIR / "timelines"
 

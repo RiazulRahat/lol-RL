@@ -16,6 +16,8 @@ data/*
 data/datasets/*
 !data/datasets/top_matches_summary_v1.csv
 
+/pro
+
 # macOS junk
 .DS_Store
 # Windows junk
